@@ -1,0 +1,9 @@
+header {
+    height: 61px;
+    border-bottom: 1px solid black;
+    background-color: #ffffff;
+}
+
+header img {
+    height: 60px;
+}
