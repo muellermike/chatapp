@@ -5,13 +5,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatBarComponent } from './components/chat-bar/chat-bar.component';
+import { ChatHistoryComponent } from './components/chat-history/chat-history.component';
+import { NicknameComponent } from './components/nickname/nickname.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ChatBarComponent
+    ChatBarComponent,
+    ChatHistoryComponent,
+    NicknameComponent
   ],
   imports: [
     BrowserModule,

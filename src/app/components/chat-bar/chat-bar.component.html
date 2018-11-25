@@ -1,8 +1,5 @@
-<div>
-    <div class="msg-box center">
-        <p>{{sentMessage}}</p>
-    </div>
+<div class="chat-bar">
     <textarea class="form-control center" rows="5" placeholder="Bitte hier Text eingeben" [(ngModel)]="chatMessage" (keyup.enter)="addMessage(chatMessage)"></textarea>
     <br />
-    <button id="send-button" class="btn btn-primary" (click)="addMessage(chatMessage)" [disabled]="!chatMessage">Senden</button>
+    <button id="send-button" class="btn btn-primary" (click)="addMessage(chatMessage)" [disabled]="!chatMessage || !isNicknameSet()">Senden</button>
 </div>

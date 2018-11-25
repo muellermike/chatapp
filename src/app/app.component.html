@@ -1,8 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-header></app-header>
 <div style="text-align:center" class="content">
-  <h1>{{title}}</h1>
-
-  <app-chat-bar></app-chat-bar>
+  <!-- <h1>{{title}}</h1> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <app-nickname></app-nickname>
+      </div>
+      <div class="col-sm-12 col-md-8">
+        <app-chat-history [history]="chatInput"></app-chat-history>
+        <app-chat-bar (chatHistory)="onChatSent($event)" class="app-chat-bar"></app-chat-bar>
+      </div>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>

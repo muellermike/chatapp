@@ -1,20 +1,11 @@
-textarea {
+/* textarea {
     width: 30%;
 }
 
 #send-button {
     width: 30%;
-}
+} */
 
-.msg-box{
-    background-color: #C0C0C0;
-    width: 30%;
-
-    word-wrap: break-word;
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.chat-bar{
+    margin-top: 20px;
 }
