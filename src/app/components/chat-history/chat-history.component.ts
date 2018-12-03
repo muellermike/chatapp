@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Message } from '../shared/Models/message';
+import { Person } from '../shared/Models/person';
 
 @Component({
   selector: 'app-chat-history',
@@ -7,15 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChatHistoryComponent implements OnInit {
 
-  @Input() history: string;
-  
-  @Input() addhistory(msg: string): void{
-    alert(msg);
-  }
-
-  constructor() { }
+  @Input() history: Message[];
 
   ngOnInit() {
   }
 
+  public getNickname() : string {
+    
+    return Person.Nickname;
+  }
 }

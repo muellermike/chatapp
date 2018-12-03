@@ -8,8 +8,9 @@
         <app-nickname></app-nickname>
       </div>
       <div class="col-sm-12 col-md-8">
-        <app-chat-history [history]="chatInput"></app-chat-history>
-        <app-chat-bar (chatHistory)="onChatSent($event)" class="app-chat-bar"></app-chat-bar>
+        <app-chat-history [history]="chatInput" style="height: 50%"></app-chat-history>
+        <hr />
+        <app-chat-bar (chatHistory)="onChatSent($event)" style="height: 50%" class="app-chat-bar"></app-chat-bar>
       </div>
     </div>
   </div>

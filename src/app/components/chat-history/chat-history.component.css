@@ -1,6 +1,12 @@
 .msg-box{
-    background-color: #C0C0C0;
-    width: 30%;
-
     word-wrap: break-word;
+}
+
+.scrollable-content {
+    display: flex;
+    flex-direction: column;
+
+    flex-grow: 1;
+
+    overflow: auto;
 }

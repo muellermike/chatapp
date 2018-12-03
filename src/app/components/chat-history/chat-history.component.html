@@ -1,2 +1,9 @@
 <h2>Chatverlauf</h2>
-<textarea rows="10" class="form-control" [(ngModel)]="history" [disabled]="true"></textarea>
+<div #messageBox style="min-height: 300px;" class="form-control scrollable-content" [scrollTop]="messageBox.scrollHeight">
+    <div id="messageBox" *ngFor="let h of history">
+        <div class="alert msg-box"
+        [class.alert-success]="h.Sender === getNickname()"
+        [class.alert-info]="h.Sender !== getNickname()"
+        role="alert">{{h.getFullText()}}</div>
+    </div>
+</div>

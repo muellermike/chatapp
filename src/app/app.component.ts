@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { getLocaleDateTimeFormat } from '@angular/common';
-import { Person } from './components/shared/Models/person';
+import { Message } from 'src/app/components/shared/Models/message';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +10,14 @@ import { Person } from './components/shared/Models/person';
 export class AppComponent {
   title = 'chatapp';
 
-  public chatInput: string;
+  public chatInput: Message[] = [];
   public nickName: string;
 
-  public onChatSent(value: string) : void {
-    if(!this.chatInput){
-      this.chatInput = '';
-    }
+  public onChatSent(value: Message) : void {
+    // if(!this.chatInput){
+    //   this.chatInput = new Message[5];
+    // }
 
-    this.chatInput += value;
+    this.chatInput.push(value);
   }
 }
