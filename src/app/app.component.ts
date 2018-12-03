@@ -13,11 +13,4 @@ export class AppComponent {
   public chatInput: Message[] = [];
   public nickName: string;
 
-  public onChatSent(value: Message) : void {
-    // if(!this.chatInput){
-    //   this.chatInput = new Message[5];
-    // }
-
-    this.chatInput.push(value);
-  }
 }

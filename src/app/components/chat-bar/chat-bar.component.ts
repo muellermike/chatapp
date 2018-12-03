@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { getLocaleDateTimeFormat } from '@angular/common';
 import { Person } from '../shared/Models/person';
 import { Message } from '../shared/Models/message';
+import { ChatService } from '../shared/services/chat.service';
 
 @Component({
   selector: 'app-chat-bar',
@@ -9,12 +10,10 @@ import { Message } from '../shared/Models/message';
   styleUrls: ['./chat-bar.component.css']
 })
 export class ChatBarComponent implements OnInit {
-
-  @Output() chatHistory: EventEmitter<Message> = new EventEmitter();
-
   public chatMessage: string;
   public sentMessage: string;
-  constructor() { }
+
+  constructor(private chatService: ChatService) { }
 
   ngOnInit() {
   }
@@ -22,13 +21,20 @@ export class ChatBarComponent implements OnInit {
   public addMessage(msg: string): void {
     this.sentMessage = msg;
     
-    var dateTime = new Date();
-    var chatMsg = `${dateTime.toLocaleString()} ${Person.Nickname}:\n${msg}\n`
-    var theMsg = new Message(Person.Nickname, msg, dateTime);
+    if (Person.Nickname) {
+      var dateTime = new Date();
+      var theMsg = new Message(Person.Nickname, msg, dateTime);
 
-    this.chatHistory.emit(theMsg);
-
-    this.chatMessage = '';
+      this.chatService.addToHistory(theMsg)
+        .subscribe(response => {
+          this.chatMessage = '';
+        },
+          (error: any) => {
+            console.log(error);
+        });
+    } else {
+      alert('Bitte Nicknamen eingeben');
+    }
   }
 
   public isNicknameSet() : boolean {

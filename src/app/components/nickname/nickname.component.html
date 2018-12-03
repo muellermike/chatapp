@@ -1,4 +1,4 @@
-<h3>Nickname</h3>
+<h2>Nickname</h2>
 <input type="text" class="form-control" placeholder="Bitte hier Nicknamen eingeben" [(ngModel)]="name" (keyup.enter)="sendNickname(name)" />
 <br />
 <button id="send-button" class="btn btn-primary" (click)="sendNickname(name)" [disabled]="!name">Name setzen</button>
