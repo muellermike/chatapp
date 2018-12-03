@@ -19,8 +19,5 @@ export class AppComponent {
     }
 
     this.chatInput += value;
-    // this.chatInput = value;
-    // var dateTime = new Date();
-    // this.chatInput += `${dateTime.toLocaleString()}\n${Person.Nickname}: ${value}\n`
   }
 }

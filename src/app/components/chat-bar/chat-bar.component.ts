@@ -22,7 +22,7 @@ export class ChatBarComponent implements OnInit {
     this.sentMessage = msg;
     
     var dateTime = new Date();
-    var chatMsg = `${dateTime.toLocaleString()}\n${Person.Nickname}: ${msg}\n`
+    var chatMsg = `${dateTime.toLocaleString()} ${Person.Nickname}:\n${msg}\n`
 
     this.chatHistory.emit(chatMsg);
     this.chatMessage = '';
