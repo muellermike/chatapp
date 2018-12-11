@@ -6,3 +6,10 @@
 <div *ngIf="nameSent">
   Hallo {{nameSent}}. Schön, dass du da bist! :-)
 </div>
+<div>
+    <ul>
+        <li *ngFor="let room of chatrooms">
+           {{room}}
+        </li>
+     </ul>
+</div>
