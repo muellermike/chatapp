@@ -9,8 +9,8 @@ export class ChatService {
     private actionUrl: string;
 
     constructor(private http: HttpClient){
-        //this.actionUrl = 'https://alpha-hsgchatapi.herokuapp.com/history';
-        this.actionUrl = 'http://localhost:2000/history';
+        this.actionUrl = 'https://alpha-hsgchatapi.herokuapp.com/history';
+        //this.actionUrl = 'http://localhost:2000/history';
         //this.actionUrl = 'http://hspapi.azurewebsite.net/history';
     }
 
