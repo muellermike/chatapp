@@ -7,9 +7,8 @@ export class ChatroomService {
     private actionUrl: string;
 
     constructor(private http: HttpClient){
-        this.actionUrl = 'https://alpha-hsgchatapi.herokuapp.com/chatrooms';
-        //this.actionUrl = 'http://localhost:3000/history';
-        //this.actionUrl = 'http://hspapi.azurewebsite.net/history';
+        //this.actionUrl = 'https://alpha-hsgchatapi.herokuapp.com/chatrooms';
+        this.actionUrl = 'http://localhost:2000/chatrooms';
     }
 
     public addChatroom(room: string): Observable<string> {

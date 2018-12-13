@@ -9,6 +9,7 @@ import { ChatBarComponent } from './components/chat-bar/chat-bar.component';
 import { ChatHistoryComponent } from './components/chat-history/chat-history.component';
 import { NicknameComponent } from './components/nickname/nickname.component';
 import { ChatService } from './components/shared/services/chat.service';
+import { ChatroomService } from './components/shared/services/chatroom.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { ChatService } from './components/shared/services/chat.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ChatService],
+  providers: [ChatService, ChatroomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

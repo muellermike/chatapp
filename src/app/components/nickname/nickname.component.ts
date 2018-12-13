@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../shared/Models/person';
+import { Chatroom } from '../shared/Models/room';
 import { ChatroomService } from 'src/app/components/shared/services/chatroom.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class NicknameComponent implements OnInit {
   public name: string;
   public nameSent: string;
   public chatrooms: string[];
+  public selectedRoom: string;
 
   constructor(private chatroomService: ChatroomService) { }
 
@@ -23,6 +25,11 @@ export class NicknameComponent implements OnInit {
     this.nameSent = name;
 
     Person.Nickname = name;
+  }
+
+  public setRoom(roomname: string) : void {
+    Chatroom.Roomname = roomname;
+    this.selectedRoom = Chatroom.Roomname;
   }
 
   private getChatrooms(): void {

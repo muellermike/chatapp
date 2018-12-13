@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { getLocaleDateTimeFormat } from '@angular/common';
 import { Person } from '../shared/Models/person';
+import { Chatroom } from '../shared/Models/room';
 import { Message } from '../shared/Models/message';
 import { ChatService } from '../shared/services/chat.service';
 
@@ -23,7 +24,7 @@ export class ChatBarComponent implements OnInit {
     
     if (Person.Nickname) {
       var dateTime = new Date();
-      var theMsg = new Message(Person.Nickname, msg, dateTime);
+      var theMsg = new Message(Person.Nickname, msg, dateTime, Chatroom.Roomname);
 
       this.chatService.addToHistory(theMsg)
         .subscribe(response => {
@@ -39,6 +40,14 @@ export class ChatBarComponent implements OnInit {
 
   public isNicknameSet() : boolean {
     if(!Person.Nickname){
+      return false;
+    } else{
+      return true;
+    }
+  }
+
+  public inAChatRoom() : boolean {
+    if(!Chatroom.Roomname){
       return false;
     } else{
       return true;

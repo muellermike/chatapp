@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChatService } from 'src/app/components/shared/services/chat.service';
 import { Message } from '../shared/Models/message';
 import { Person } from '../shared/Models/person';
+import { Chatroom } from '../shared/Models/room';
 
 @Component({
   selector: 'app-chat-history',
@@ -26,12 +27,12 @@ export class ChatHistoryComponent implements OnInit {
   }
 
   private getHistory(): void {
-    this.chatService.getHistory()
+    this.chatService.getHistory(Chatroom.Roomname)
       .subscribe(response => {
         this.history = [];
 
         for(var h of response){
-          this.history.push(new Message(h.nickname, h.message, new Date(h.date)));
+          this.history.push(new Message(h.nickname, h.message, new Date(h.date), h.chatroom));
         }
       });
   }

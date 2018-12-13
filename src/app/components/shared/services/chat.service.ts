@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -9,8 +9,8 @@ export class ChatService {
     private actionUrl: string;
 
     constructor(private http: HttpClient){
-        this.actionUrl = 'https://alpha-hsgchatapi.herokuapp.com/history';
-        //this.actionUrl = 'http://localhost:3000/history';
+        //this.actionUrl = 'https://alpha-hsgchatapi.herokuapp.com/history';
+        this.actionUrl = 'http://localhost:2000/history';
         //this.actionUrl = 'http://hspapi.azurewebsite.net/history';
     }
 
@@ -22,8 +22,10 @@ export class ChatService {
         return this.http.post<Message>(this.actionUrl, message, options);
     }
 
-    public getHistory(): Observable<Message[]> {
-        return this.http.get<Message[]>(this.actionUrl);
+    public getHistory(chatroom: string): Observable<Message[]> {
+        var params = new HttpParams();
+        params = params.append('chatroom', chatroom);
+        return this.http.get<Message[]>(this.actionUrl, { params: params });
     }
 
 }
