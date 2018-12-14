@@ -14,6 +14,7 @@ export class NicknameComponent implements OnInit {
   public nameSent: string;
   public chatrooms: string[];
   public selectedRoom: string;
+  public newChatroom: string;
 
   constructor(private chatroomService: ChatroomService) { }
 
@@ -25,6 +26,15 @@ export class NicknameComponent implements OnInit {
     this.nameSent = name;
 
     Person.Nickname = name;
+  }
+
+  public addChatroom(name: string) : void {
+    alert('sauber: ' + name);
+    this.chatroomService.addChatroom(name)
+      .subscribe(response => {
+        this.getChatrooms();
+      });
+    this.newChatroom = '';
   }
 
   public setRoom(roomname: string) : void {

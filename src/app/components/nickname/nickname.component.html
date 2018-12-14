@@ -1,16 +1,24 @@
 <h2>Nickname</h2>
 <input type="text" class="form-control" placeholder="Bitte hier Nicknamen eingeben" [(ngModel)]="name" (keyup.enter)="sendNickname(name)" />
 <br />
-<button id="send-button" class="btn btn-primary" (click)="sendNickname(name)" [disabled]="!name">Name setzen</button>
+<button id="send-button" class="btn btn-success" (click)="sendNickname(name)" [disabled]="!name">Name setzen</button>
 <br />
 <div *ngIf="nameSent">
   Hallo {{nameSent}}. Schön, dass du da bist! :-)
 </div>
 <br />
-<div class="list-group">
-     <button *ngFor="let room of chatrooms"
-        type="button" 
-        class="list-group-item list-group-item-action"
-        [class.active]="selectedRoom === room"
-        (click)="setRoom(room)">{{room}}</button>
+<div>
+  <h2>Chatraum</h2>
+  <div class="list-group">
+      <button *ngFor="let room of chatrooms"
+          type="button" 
+          class="list-group-item list-group-item-action"
+          [class.active]="selectedRoom === room"
+          (click)="setRoom(room)">{{room}}</button>
+  </div>
+  <div style="margin-top: 20px;">
+      <input type="text" class="form-control" placeholder="Bitte gib den Namen des Chatraums ein" [(ngModel)]="newChatroom" />
+      <br />
+      <button id="send-button" class="btn btn-success" (click)="addChatroom(newChatroom)" [disabled]="!newChatroom">Chatraum hinzufügen</button>
+  </div>
 </div>

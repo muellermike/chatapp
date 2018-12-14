@@ -11,12 +11,12 @@ export class ChatroomService {
         //this.actionUrl = 'http://localhost:2000/chatrooms';
     }
 
-    public addChatroom(room: string): Observable<string> {
+    public addChatroom(chatroom: string): Observable<string> {
         var options = {
             headers: new HttpHeaders().set('Content-Type', 'application/json')
         };
 
-        return this.http.post<string>(this.actionUrl, room, options);
+        return this.http.post<string>(this.actionUrl, { chatroom: chatroom } , options);
     }
 
     public getChatrooms(): Observable<string[]> {

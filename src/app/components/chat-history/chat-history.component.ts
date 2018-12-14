@@ -18,12 +18,18 @@ export class ChatHistoryComponent implements OnInit {
 
   ngOnInit() {
     setInterval(() => {
-      this.getHistory();
+      if(this.getChatroom()){
+        this.getHistory();
+      }
     }, 2000);
   }
 
   public getNickname() : string {
     return Person.Nickname;
+  }
+
+  public getChatroom() : string {
+    return Chatroom.Roomname;
   }
 
   private getHistory(): void {

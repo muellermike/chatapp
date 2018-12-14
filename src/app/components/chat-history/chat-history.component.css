@@ -20,3 +20,10 @@
     float: right;
     width: 70%;
 }
+
+.no-chatroom-selected {
+    background-color: lightgrey;
+    height: 100%;
+    text-align: center;
+    padding: 150px 0;
+}
