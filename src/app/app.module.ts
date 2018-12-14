@@ -10,6 +10,7 @@ import { ChatHistoryComponent } from './components/chat-history/chat-history.com
 import { NicknameComponent } from './components/nickname/nickname.component';
 import { ChatService } from './components/shared/services/chat.service';
 import { ChatroomService } from './components/shared/services/chatroom.service';
+import { ChatroomComponent } from './components/chatroom/chatroom.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ChatroomService } from './components/shared/services/chatroom.service';
     FooterComponent,
     ChatBarComponent,
     ChatHistoryComponent,
-    NicknameComponent
+    NicknameComponent,
+    ChatroomComponent
   ],
   imports: [
     BrowserModule,

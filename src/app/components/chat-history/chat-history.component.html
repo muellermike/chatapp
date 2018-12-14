@@ -12,4 +12,9 @@
     <div *ngIf="!getChatroom()" class="no-chatroom-selected">
         Bitte wähle einen Chatraum aus.
     </div>
+    <div *ngIf="getChatroom() && history.length === 0" 
+        class="alert alert-warning" 
+        role="alert">
+        Die erste Nachricht währt am längsten.
+    </div>
 </div>
