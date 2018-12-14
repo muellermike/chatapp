@@ -8,7 +8,7 @@
             (click)="setRoom(room)">{{room}}</button>
     </div>
     <div style="margin-top: 20px;">
-        <input type="text" class="form-control" placeholder="Bitte gib den Namen des Chatraums ein" [(ngModel)]="newChatroom" />
+        <input type="text" class="form-control" placeholder="Bitte gib den Namen des Chatraums ein" [(ngModel)]="newChatroom" (keyup.enter)="addChatroom(newChatroom)" />
         <br />
         <button id="send-button" class="btn btn-success" (click)="addChatroom(newChatroom)" [disabled]="!newChatroom">Chatraum hinzufügen</button>
     </div>
