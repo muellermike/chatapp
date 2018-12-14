@@ -6,6 +6,8 @@ export class Message{
     public date: Date;
     public chatroom: string;
 
+    private options = { day: 'numeric', year: 'numeric', month: 'numeric', hour: 'numeric', minute: 'numeric'};
+
     constructor(nickname: string, message: string, date: Date, chatroom: string){
         this.nickname = nickname;
         this.message = message;
@@ -13,7 +15,11 @@ export class Message{
         this.chatroom = chatroom;
     }
     
-    public getFullText(): string {
-        return `${this.date.toLocaleString()} ${this.nickname}: ${this.message}`;
+    // public getFullText(): string {
+    //     return `${this.date.toLocaleString()} ${this.nickname}: ${this.message}`;
+    // }
+
+    public getDate(): string {
+        return this.date.toLocaleDateString("de-CH", this.options);
     }
 }

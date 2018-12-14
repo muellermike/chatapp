@@ -27,3 +27,8 @@
     text-align: center;
     padding: 150px 0;
 }
+
+.msg-info {
+    font-size: 12px;
+    font-weight: bold
+}

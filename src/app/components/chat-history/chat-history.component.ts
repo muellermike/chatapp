@@ -11,7 +11,7 @@ import { Chatroom } from '../shared/Models/room';
 })
 export class ChatHistoryComponent implements OnInit {
 
-  public history: Message[];
+  public history: Message[] = [];
 
   constructor(private chatService: ChatService) {
   }
