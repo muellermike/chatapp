@@ -1,5 +1,5 @@
-<h2>Chatverlauf</h2>
-<h3>{{getChatroom()}}</h3>
+<h2 *ngIf="!getChatroom()">Chatverlauf</h2>
+<h2 *ngIf="getChatroom()">Chatverlauf ({{getChatroom()}})</h2>
 <div #messageBox style="min-height: 350px;" class="form-control scrollable-content" [scrollTop]="messageBox.scrollHeight">
     <div id="messageBox" *ngFor="let h of history">
         <div class="alert msg-box"

@@ -29,7 +29,6 @@ export class NicknameComponent implements OnInit {
   }
 
   public addChatroom(name: string) : void {
-    alert('sauber: ' + name);
     this.chatroomService.addChatroom(name)
       .subscribe(response => {
         this.getChatrooms();
