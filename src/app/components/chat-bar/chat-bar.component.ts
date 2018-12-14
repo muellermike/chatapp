@@ -22,7 +22,7 @@ export class ChatBarComponent implements OnInit {
   public addMessage(msg: string): void {
     this.sentMessage = msg;
     
-    if (Person.Nickname) {
+    if (Person.Nickname && Chatroom.Roomname) {
       var dateTime = new Date();
       var theMsg = new Message(Person.Nickname, msg, dateTime, Chatroom.Roomname);
 
@@ -33,8 +33,10 @@ export class ChatBarComponent implements OnInit {
           (error: any) => {
             console.log(error);
         });
-    } else {
+    } else if (!Person.Nickname) {
       alert('Bitte Nicknamen eingeben');
+    } else {
+      alert('Bitte wähle einen Chatraum aus.');
     }
   }
 
