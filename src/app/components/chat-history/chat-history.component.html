@@ -7,9 +7,18 @@
             [class.alert-info]="h.nickname !== getNickname()"
             [class.right]="h.nickname === getNickname()"
             [class.left]="h.nickname !== getNickname()"
-            role="alert">
+            role="alert"
+            (mouseover)="mouseoverMsg=h" (mouseout)="mouseoverMsg=undefined">
             <div class="msg-info">{{h.nickname}} ({{h.getDate()}}):</div>
             {{h.message}}
+            <div style="float: right;" *ngIf="mouseoverMsg !== undefined && mouseoverMsg.date == h.date">
+                <button type="button" class="btn btn-secondary" title="like">
+                    like
+                </button>
+                <button type="button" class="btn btn-secondary" title="dislike">
+                    dislike
+                </button>
+            </div>
         </div>
     </div>
     <div *ngIf="!getChatroom()" class="no-chatroom-selected">

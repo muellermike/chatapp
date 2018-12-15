@@ -12,6 +12,7 @@ import { Chatroom } from '../shared/Models/room';
 export class ChatHistoryComponent implements OnInit {
 
   public history: Message[] = [];
+  public showTextElements: boolean;
 
   constructor(private chatService: ChatService) {
   }
