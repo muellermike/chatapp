@@ -48,10 +48,6 @@ export class ChatBarComponent implements OnInit {
     }
   }
 
-  public getNickname() : string {
-    return Person.Nickname;
-  }
-
   public inAChatRoom() : boolean {
     if(!Chatroom.Roomname){
       return false;
