@@ -1,5 +1,5 @@
 <div class="chat-bar">
-    <textarea class="form-control center" rows="5" placeholder="Bitte hier Text eingeben" [(ngModel)]="chatMessage" (keyup.enter)="addMessage(chatMessage)"></textarea>
+    <textarea class="form-control center" rows="5" placeholder="Bitte hier Text eingeben!!! PERSONALISIEREN" [(ngModel)]="chatMessage" (keyup.enter)="addMessage(chatMessage)"></textarea>
     <br />
     <button id="send-button" class="btn btn-success" (click)="addMessage(chatMessage)" [disabled]="!chatMessage || !isNicknameSet() ||!inAChatRoom()">Senden</button>
 </div>
