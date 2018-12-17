@@ -20,11 +20,15 @@ export class ChatroomComponent implements OnInit {
   }
 
   public addChatroom(name: string) : void {
-    this.chatroomService.addChatroom(name)
-      .subscribe(response => {
-        this.getChatrooms();
-      });
-    this.newChatroom = '';
+    if(this.chatrooms.indexOf(name) == -1){
+      this.chatroomService.addChatroom(name)
+        .subscribe(response => {
+          this.getChatrooms();
+        });
+      this.newChatroom = '';
+    } else {
+      alert('Dieser Chatraum existiert bereits.');
+    }
   }
 
   public setRoom(roomname: string) : void {
