@@ -16,7 +16,9 @@ export class ChatroomComponent implements OnInit {
   constructor(private chatroomService: ChatroomService) { }
 
   ngOnInit() {
-    this.getChatrooms();
+    setInterval(() => {
+      this.getChatrooms();
+    }, 2000);
   }
 
   public addChatroom(name: string) : void {
